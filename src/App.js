@@ -10,6 +10,19 @@ import Button from "./Button";
 const numbers = [1, 2, 3, 4, 5, 6];
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0
+    };
+  }
+
+  click = async () => {
+    // Wait for setState finished
+    await this.setState({ counter: this.state.counter + 1 });
+    console.log("CLICK!", this.state.counter);
+  };
+
   render() {
     return (
       <div>
@@ -18,8 +31,9 @@ class App extends Component {
         {numbers.map(item => {
           return <Button number={item} />;
         })}
+        <p>{this.state.counter} clicks</p>
+        <button onClick={this.click}>Click Me!</button>
       </div>
-      // Bikin ini -> Make state simpler
     );
   }
 }
