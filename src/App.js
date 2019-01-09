@@ -26,14 +26,30 @@ class App extends Component {
     return (
       <div>
         <main className="container">
-          <Header />
-          <Paragraph />
-          {numbers.map(item => {
-            return <Button number={item} />;
-          })}
-          <p>{this.state.counter} clicks</p>
-          <button onClick={this.click}>Click Me!</button>
+          <div>
+            <Header />
+            <Paragraph />
+            <p>
+              note : I learn to make header-and-paragraph component react, and
+              call them in hire with{" "}
+            </p>
+          </div>
+
+          <div>
+            <p>
+              {numbers.map(item => {
+                return <Button number={item} />;
+              })}
+              <p>{this.state.counter} clicks</p>
+              <button onClick={this.click}>Click Me!</button>
+              note : i learn to make button and conter with component, and few
+              items called with map function
+            </p>
+          </div>
+              
           <Album />
+
+
         </main>
       </div>
     );
